@@ -1,0 +1,1250 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="30" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="18">odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID 
+Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'
+And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>False</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Source=ddcclrspragdb2
+Catalog=CLARITY_PRD_REPORT
+Table=Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID 
+Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'
+And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="PAT_ID" size="18" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PAT_ENC_CSN_ID" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="PAT_ENC_DATE_REAL" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Double" />
+            <Field name="CONTACT_DATE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="DateTime" />
+            <Field name="ENC_TYPE_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="DEPARTMENT_ID" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="BP_SYSTOLIC" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Double" />
+            <Field name="BP_DIASTOLIC" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Double" />
+            <Field name="TEMPERATURE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Double" />
+            <Field name="PULSE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+            <Field name="WEIGHT" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Double" />
+            <Field name="HEIGHT" size="270" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="RESPIRATIONS" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+            <Field name="CHECKIN_TIME" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="DateTime" />
+            <Field name="CHECKOUT_TIME" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="DateTime" />
+            <Field name="ENC_CLOSE_DATE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="DateTime" />
+            <Field name="SERV_AREA_ID" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="BMI" scale="2" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="BSA" scale="2" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="PHYS_BP" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PAT_PAIN_SCORE_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="FAMILY_SIZE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+            <Field name="FAMILY_INCOME" scale="2" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="PAT_HOMELESS_YN" size="1" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="TOBACCO_USE_VRFY_YN" size="1" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PAT_ID2" size="18" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PAT_NAME" size="200" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="CITY" size="50" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="STATE_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="COUNTY_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="County_Name" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="ZIP" size="60" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="BIRTH_DATE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="DateTime" />
+            <Field name="SEX_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="ETHNIC_GROUP_C" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+            <Field name="MARITAL_STATUS_C" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+            <Field name="LANGUAGE_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="DEF_FIN_CLASS_C" size="66" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="CUR_PRIM_LOC_ID" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="PAT_MRN_ID" size="102" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PROV_ID" size="18" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PROV_NAME" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="PROV_TYPE" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="ACTIVE_STATUS" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="STAFF_RESOURCE" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="EXTERNAL_NAME" size="80" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="SERV_AREA_ID2" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="LOC_NAME" size="80" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="DX_ID" scale="0" size="20" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="FixedDecimal" />
+            <Field name="CURRENT_ICD10_LIST" size="254" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="DX_NAME" size="200" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="V_String" />
+            <Field name="LINE" source="File: odb:Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CLARITY_PRD_REPORT;Data Source=ddcclrspragdb2;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=LWGA02STSCWS08;Use Encryption for Data=False;Tag with column collation when possible=False|||Select pe.PAT_ID, pe.PAT_ENC_CSN_ID, pe.PAT_ENC_DATE_REAL, pe.CONTACT_DATE, pe.ENC_TYPE_C, pe.DEPARTMENT_ID, pe.BP_SYSTOLIC, pe.BP_DIASTOLIC, pe.TEMPERATURE, pe.PULSE, pe.WEIGHT, pe.HEIGHT, pe.RESPIRATIONS, pe.CHECKIN_TIME, pe.CHECKOUT_TIME, pe.ENC_CLOSE_DATE, pe.SERV_AREA_ID, pe.BMI, pe.BSA, pe2.PHYS_BP, pe2.PAT_PAIN_SCORE_C, pe4.FAMILY_SIZE, pe4.FAMILY_INCOME, pe4.PAT_HOMELESS_YN, pe4.TOBACCO_USE_VRFY_YN, p.PAT_ID, p.PAT_NAME, p.CITY, p.STATE_C, p.COUNTY_C, zcc.NAME County_Name, p.ZIP, p.BIRTH_DATE, p.SEX_C, p.ETHNIC_GROUP_C, p.MARITAL_STATUS_C, p.LANGUAGE_C, p.DEF_FIN_CLASS_C, p.CUR_PRIM_LOC_ID, p.PAT_MRN_ID, cs.PROV_ID, cs.PROV_NAME, cs.PROV_TYPE, cs.ACTIVE_STATUS, cs.STAFF_RESOURCE, cs.EXTERNAL_NAME, loc.SERV_AREA_ID, loc.LOC_NAME, had.DX_ID, edg.CURRENT_ICD10_LIST, edg.DX_NAME, had.LINE From PAT_ENC pe Inner Join PAT_ENC_2 pe2 On pe.PAT_ENC_CSN_ID = pe2.PAT_ENC_CSN_ID Inner Join PAT_ENC_4 pe4 On pe.PAT_ENC_CSN_ID = pe4.PAT_ENC_CSN_ID Inner Join PATIENT p On pe.PAT_ID = p.PAT_ID And pe.PAT_ENC_CSN_ID = p.MEDS_LAST_REV_CSN Inner Join CLARITY_LOC loc On pe.SERV_AREA_ID = loc.SERV_AREA_ID Inner Join HSP_ADMIT_DIAG had On had.PAT_ENC_CSN_ID = pe.PAT_ENC_CSN_ID And had.PAT_ID = pe.PAT_ID And had.PAT_ENC_DATE_REAL = pe.PAT_ENC_DATE_REAL Inner Join CLARITY_EDG edg On edg.DX_ID = had.DX_ID Left Outer Join ZC_COUNTY zcc On zcc.COUNTY_C = p.COUNTY_C Inner Join CLARITY_SER cs On p.CUR_PCP_PROV_ID = cs.PROV_ID &#xA;Where pe.CONTACT_DATE BETWEEN '2018-12-01' AND '2019-12-01'&#xA;And pe.SERV_AREA_ID = '2' And loc.LOC_NAME Like '%Bruner%' Order By cs.PROV_NAME" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings>
+        <Position x="78" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"CITY","COUNTY_C","County_Name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="402" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [CURRENT_ICD10_LIST] IN ('I10','I15.9','I15.1','I15.0','O10.919','G93.2','I12.9','I27.20','I27.21','K76.6','I27.24') &#xA;THEN 1 &#xA;ELSE 0&#xA;ENDIF" field="Hypertension Codes" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Hypertension Codes = IF [CURRENT_ICD10_LIST] IN ('I10','I15.9','I15.1','I15.0','...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="210" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>ZIP</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>ZIP</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="534" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="ZIP1" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="366" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ZIP1" action="GroupBy" rename="ZIP1" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="690" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Alteryx Workflows\Alteryx Outputs\Files for Supervised Algorithms\Zip Codes.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Zip Codes.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="318" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [CURRENT_ICD10_LIST] IN ('E66.9','E66.01','O99.212','O99.210','O99.214','O99.213') &#xA;THEN 1 &#xA;ELSE 0&#xA;ENDIF" field="Obesity Codes" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Obesity Codes = IF [CURRENT_ICD10_LIST] IN ('E66.9','E66.01','O99.212','O99.210'...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="318" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [CURRENT_ICD10_LIST] IN ('E11.9','E11.65','E11.29','E11.8','E11.42','E11.69','E11.21','E11.22','E11.40','E11.319','E11.59','E10.9','E11.41','E13.9','E11.3293','E13.8','E11.311','E08.621','L97.509','E10.10','E10.22','N18.5','E10.3511','E10.35.22','E10.621','L97.529','E10.649','E10.9','E11.10','E11.22','N18.5','Z79.4','E11.3522','E11.3591','E11.42','E11.40','G99.2','E11.51','E11.52','E11.610','E11.621','L97.509','E11.8','E11.9','E11.9, Z79.4','E13.10','E13.22','N18.5','E13.65','E13.621, L97.505','O24.113','O24.414','O24.419','O24.419, Z79.4') &#xA;THEN 1 &#xA;ELSE 0&#xA;ENDIF" field="Diabetes Codes" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Diabetes Codes = IF [CURRENT_ICD10_LIST] IN ('E11.9','E11.65','E11.29','E11.8','...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="810" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Zip Codes" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ZIP" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_PAT_ID" selected="True" input="Right_" />
+                <SelectField field="Right_PAT_ENC_CSN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ENC_DATE_REAL" selected="False" input="Right_" />
+                <SelectField field="Right_CONTACT_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_TYPE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEPARTMENT_ID" selected="False" input="Right_" />
+                <SelectField field="Right_BP_SYSTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_BP_DIASTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_TEMPERATURE" selected="True" input="Right_" />
+                <SelectField field="Right_PULSE" selected="True" input="Right_" />
+                <SelectField field="Right_WEIGHT" selected="True" input="Right_" />
+                <SelectField field="Right_BMI" selected="True" input="Right_" />
+                <SelectField field="Right_BSA" selected="True" input="Right_" />
+                <SelectField field="Right_HEIGHT" selected="False" input="Right_" />
+                <SelectField field="Right_RESPIRATIONS" selected="True" input="Right_" />
+                <SelectField field="Right_CHECKIN_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_CHECKOUT_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_CLOSE_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PHYS_BP" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_PAIN_SCORE_C" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_SIZE" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_INCOME" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_HOMELESS_YN" selected="False" input="Right_" />
+                <SelectField field="Right_TOBACCO_USE_VRFY_YN" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_City" selected="False" rename="Right_City" input="Right_" />
+                <SelectField field="Right_STATE_C" selected="False" input="Right_" />
+                <SelectField field="Right_COUNTY_C" selected="False" input="Right_" />
+                <SelectField field="Right_County_Name" selected="False" input="Right_" />
+                <SelectField field="Right_ZIP" selected="False" input="Right_" />
+                <SelectField field="Right_BIRTH_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_SEX_C" selected="False" input="Right_" />
+                <SelectField field="Right_ETHNIC_GROUP_C" selected="False" input="Right_" />
+                <SelectField field="Right_MARITAL_STATUS_C" selected="False" input="Right_" />
+                <SelectField field="Right_LANGUAGE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEF_FIN_CLASS_C" selected="False" input="Right_" />
+                <SelectField field="Right_CUR_PRIM_LOC_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_MRN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_TYPE" selected="False" input="Right_" />
+                <SelectField field="Right_ACTIVE_STATUS" selected="False" input="Right_" />
+                <SelectField field="Right_STAFF_RESOURCE" selected="False" input="Right_" />
+                <SelectField field="Right_EXTERNAL_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_LOC_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_DX_ID" selected="False" input="Right_" />
+                <SelectField field="Right_CURRENT_ICD10_LIST" selected="False" input="Right_" />
+                <SelectField field="Right_DX_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_LINE" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+                <SelectField field="Left_Zip Codes" selected="False" input="Left_" />
+                <SelectField field="Left_Urban" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Tract (At or &gt; 20%)" selected="True" input="Left_" />
+                <SelectField field="Left_Risk of Of Being Distant from SM" selected="True" input="Left_" />
+                <SelectField field="Left_Low Access to Supermarket" selected="True" input="Left_" />
+                <SelectField field="Left_Children Eligible for Free or Reduced Price Lunch" selected="True" input="Left_" />
+                <SelectField field="Left_Free or Reduced Lunch Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Median Family Income" selected="True" input="Left_" />
+                <SelectField field="Left_MFI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Adults" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Environment Index" selected="True" input="Left_" />
+                <SelectField field="Left_FEI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Frequent Mental Distress" selected="True" input="Left_" />
+                <SelectField field="Left_Mental Distress Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Crime Rate " selected="True" input="Left_" />
+                <SelectField field="Left_High School Graduation Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Below National Average (84.6%)" selected="True" input="Left_" />
+                <SelectField field="Left_Percentage Unemployed" selected="True" input="Left_" />
+                <SelectField field="Left_Unemployed Tract (National Average = 3.7%" selected="True" input="Left_" />
+                <SelectField field="Right_Hypertension Codes" selected="True" input="Right_" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="462" y="-6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Social Determinants of Health.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Zip Codes" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="City " size="255" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="State" size="255" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="County" size="255" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Urban" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Poverty Rate" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Poverty Tract (At or &gt; 20%)" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Risk of Of Being Distant from SM" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Low Access to Supermarket" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Children Eligible for Free or Reduced Price Lunch" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Free or Reduced Lunch Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Median Family Income" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="MFI Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Uninsured Adults" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Uninsured Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Food Insecurity" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Food Insecurity Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Food Environment Index" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="FEI Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Frequent Mental Distress" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Mental Distress Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Physical Inactivity" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Physical Inactivity Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Access to Exercise" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Access to Exercise Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Excessive Drinking" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Excessive Drinking Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Flu Vaccinations" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Flu Vaccinations Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Mammography" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Mammography Tract" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Crime Rate " source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="High School Graduation Rate" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Below National Average (84.6%)" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Percentage Unemployed" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Unemployed Tract (National Average = 3.7%" source="File: \\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Supporting Excel Data Files\Social Determinants of Health.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="798" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Zip Codes" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ZIP" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Zip Codes" selected="False" input="Left_" />
+                <SelectField field="Right_PAT_ID" selected="True" input="Right_" />
+                <SelectField field="Right_PAT_ENC_CSN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ENC_DATE_REAL" selected="False" input="Right_" />
+                <SelectField field="Right_CONTACT_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_TYPE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEPARTMENT_ID" selected="False" input="Right_" />
+                <SelectField field="Right_BP_SYSTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_BP_DIASTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_TEMPERATURE" selected="True" input="Right_" />
+                <SelectField field="Right_PULSE" selected="True" input="Right_" />
+                <SelectField field="Right_WEIGHT" selected="True" input="Right_" />
+                <SelectField field="Right_RESPIRATIONS" selected="True" input="Right_" />
+                <SelectField field="Right_BMI" selected="True" input="Right_" />
+                <SelectField field="Right_BSA" selected="True" input="Right_" />
+                <SelectField field="Right_HEIGHT" selected="False" input="Right_" />
+                <SelectField field="Right_CHECKIN_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_CHECKOUT_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_CLOSE_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PHYS_BP" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_PAIN_SCORE_C" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_SIZE" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_INCOME" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_HOMELESS_YN" selected="False" input="Right_" />
+                <SelectField field="Right_TOBACCO_USE_VRFY_YN" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_CITY" selected="False" rename="Right_CITY" input="Right_" />
+                <SelectField field="Right_STATE_C" selected="False" input="Right_" />
+                <SelectField field="Right_COUNTY_C" selected="False" input="Right_" />
+                <SelectField field="Right_County_Name" selected="False" input="Right_" />
+                <SelectField field="Right_ZIP" selected="False" input="Right_" />
+                <SelectField field="Right_BIRTH_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_SEX_C" selected="False" input="Right_" />
+                <SelectField field="Right_ETHNIC_GROUP_C" selected="False" input="Right_" />
+                <SelectField field="Right_MARITAL_STATUS_C" selected="False" input="Right_" />
+                <SelectField field="Right_LANGUAGE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEF_FIN_CLASS_C" selected="False" input="Right_" />
+                <SelectField field="Right_CUR_PRIM_LOC_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_MRN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_TYPE" selected="False" input="Right_" />
+                <SelectField field="Right_ACTIVE_STATUS" selected="False" input="Right_" />
+                <SelectField field="Right_STAFF_RESOURCE" selected="False" input="Right_" />
+                <SelectField field="Right_EXTERNAL_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_LOC_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_DX_ID" selected="False" input="Right_" />
+                <SelectField field="Right_CURRENT_ICD10_LIST" selected="False" input="Right_" />
+                <SelectField field="Right_DX_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_LINE" selected="False" input="Right_" />
+                <SelectField field="Left_Urban" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Tract (At or &gt; 20%)" selected="True" input="Left_" />
+                <SelectField field="Left_Risk of Of Being Distant from SM" selected="True" input="Left_" />
+                <SelectField field="Left_Low Access to Supermarket" selected="True" input="Left_" />
+                <SelectField field="Left_Children Eligible for Free or Reduced Price Lunch" selected="True" input="Left_" />
+                <SelectField field="Left_Free or Reduced Lunch Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Median Family Income" selected="True" input="Left_" />
+                <SelectField field="Left_MFI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Adults" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Environment Index" selected="True" input="Left_" />
+                <SelectField field="Left_FEI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Frequent Mental Distress" selected="True" input="Left_" />
+                <SelectField field="Left_Mental Distress Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Crime Rate " selected="True" input="Left_" />
+                <SelectField field="Left_High School Graduation Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Below National Average (84.6%)" selected="True" input="Left_" />
+                <SelectField field="Left_Percentage Unemployed" selected="True" input="Left_" />
+                <SelectField field="Left_Unemployed Tract (National Average = 3.7%" selected="True" input="Left_" />
+                <SelectField field="Right_Obesity Codes" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="798" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Zip Codes" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="ZIP" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Zip Codes" selected="False" input="Left_" />
+                <SelectField field="Right_PAT_ID" selected="True" input="Right_" />
+                <SelectField field="Right_PAT_ENC_CSN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ENC_DATE_REAL" selected="False" input="Right_" />
+                <SelectField field="Right_CONTACT_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_TYPE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEPARTMENT_ID" selected="False" input="Right_" />
+                <SelectField field="Right_BP_SYSTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_BP_DIASTOLIC" selected="True" input="Right_" />
+                <SelectField field="Right_TEMPERATURE" selected="True" input="Right_" />
+                <SelectField field="Right_PULSE" selected="True" input="Right_" />
+                <SelectField field="Right_WEIGHT" selected="True" input="Right_" />
+                <SelectField field="Right_BMI" selected="True" input="Right_" />
+                <SelectField field="Right_BSA" selected="True" input="Right_" />
+                <SelectField field="Right_RESPIRATIONS" selected="True" input="Right_" />
+                <SelectField field="Right_HEIGHT" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID" selected="False" input="Right_" />
+                <SelectField field="Right_CHECKIN_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_CHECKOUT_TIME" selected="False" input="Right_" />
+                <SelectField field="Right_ENC_CLOSE_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_PHYS_BP" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_PAIN_SCORE_C" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_SIZE" selected="False" input="Right_" />
+                <SelectField field="Right_FAMILY_INCOME" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_HOMELESS_YN" selected="False" input="Right_" />
+                <SelectField field="Right_TOBACCO_USE_VRFY_YN" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_CITY" selected="False" rename="Right_CITY" input="Right_" />
+                <SelectField field="Right_STATE_C" selected="False" input="Right_" />
+                <SelectField field="Right_COUNTY_C" selected="False" input="Right_" />
+                <SelectField field="Right_County_Name" selected="False" input="Right_" />
+                <SelectField field="Right_ZIP" selected="False" input="Right_" />
+                <SelectField field="Right_BIRTH_DATE" selected="False" input="Right_" />
+                <SelectField field="Right_SEX_C" selected="False" input="Right_" />
+                <SelectField field="Right_ETHNIC_GROUP_C" selected="False" input="Right_" />
+                <SelectField field="Right_MARITAL_STATUS_C" selected="False" input="Right_" />
+                <SelectField field="Right_LANGUAGE_C" selected="False" input="Right_" />
+                <SelectField field="Right_DEF_FIN_CLASS_C" selected="False" input="Right_" />
+                <SelectField field="Right_CUR_PRIM_LOC_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PAT_MRN_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_ID" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_PROV_TYPE" selected="False" input="Right_" />
+                <SelectField field="Right_ACTIVE_STATUS" selected="False" input="Right_" />
+                <SelectField field="Right_STAFF_RESOURCE" selected="False" input="Right_" />
+                <SelectField field="Right_EXTERNAL_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_SERV_AREA_ID2" selected="False" input="Right_" />
+                <SelectField field="Right_LOC_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_DX_ID" selected="False" input="Right_" />
+                <SelectField field="Right_CURRENT_ICD10_LIST" selected="False" input="Right_" />
+                <SelectField field="Right_DX_NAME" selected="False" input="Right_" />
+                <SelectField field="Right_LINE" selected="False" input="Right_" />
+                <SelectField field="Left_Urban" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Poverty Tract (At or &gt; 20%)" selected="True" input="Left_" />
+                <SelectField field="Left_Risk of Of Being Distant from SM" selected="True" input="Left_" />
+                <SelectField field="Left_Low Access to Supermarket" selected="True" input="Left_" />
+                <SelectField field="Left_Children Eligible for Free or Reduced Price Lunch" selected="True" input="Left_" />
+                <SelectField field="Left_Free or Reduced Lunch Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Median Family Income" selected="True" input="Left_" />
+                <SelectField field="Left_MFI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Adults" selected="True" input="Left_" />
+                <SelectField field="Left_Uninsured Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity" selected="True" input="Left_" />
+                <SelectField field="Left_Food Insecurity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Food Environment Index" selected="True" input="Left_" />
+                <SelectField field="Left_FEI Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Frequent Mental Distress" selected="True" input="Left_" />
+                <SelectField field="Left_Mental Distress Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity" selected="True" input="Left_" />
+                <SelectField field="Left_Physical Inactivity Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise" selected="True" input="Left_" />
+                <SelectField field="Left_Access to Exercise Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking" selected="True" input="Left_" />
+                <SelectField field="Left_Excessive Drinking Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations" selected="True" input="Left_" />
+                <SelectField field="Left_Flu Vaccinations Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography" selected="True" input="Left_" />
+                <SelectField field="Left_Mammography Tract" selected="True" input="Left_" />
+                <SelectField field="Left_Crime Rate " selected="True" input="Left_" />
+                <SelectField field="Left_High School Graduation Rate" selected="True" input="Left_" />
+                <SelectField field="Left_Below National Average (84.6%)" selected="True" input="Left_" />
+                <SelectField field="Left_Percentage Unemployed" selected="True" input="Left_" />
+                <SelectField field="Left_Unemployed Tract (National Average = 3.7%" selected="True" input="Left_" />
+                <SelectField field="Right_Diabetes Codes" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="630" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Hypertension Codes" action="GroupBy" rename="Hypertension Codes" />
+            <SummarizeField field="Hypertension Codes" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="414" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Obesity Codes" action="GroupBy" rename="Obesity Codes" />
+            <SummarizeField field="Obesity Codes" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="402" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Diabetes Codes" action="GroupBy" rename="Diabetes Codes" />
+            <SummarizeField field="Diabetes Codes" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="186" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>ZIP</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>ZIP</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="PAT_ID" selected="True" />
+            <SelectField field="PAT_ENC_CSN_ID" selected="True" />
+            <SelectField field="PAT_ENC_DATE_REAL" selected="True" />
+            <SelectField field="CONTACT_DATE" selected="True" />
+            <SelectField field="ENC_TYPE_C" selected="True" />
+            <SelectField field="DEPARTMENT_ID" selected="True" />
+            <SelectField field="BP_SYSTOLIC" selected="True" />
+            <SelectField field="BP_DIASTOLIC" selected="True" />
+            <SelectField field="TEMPERATURE" selected="True" />
+            <SelectField field="PULSE" selected="True" />
+            <SelectField field="WEIGHT" selected="True" />
+            <SelectField field="HEIGHT" selected="True" />
+            <SelectField field="RESPIRATIONS" selected="True" />
+            <SelectField field="CHECKIN_TIME" selected="True" />
+            <SelectField field="CHECKOUT_TIME" selected="True" />
+            <SelectField field="ENC_CLOSE_DATE" selected="True" />
+            <SelectField field="SERV_AREA_ID" selected="True" />
+            <SelectField field="BMI" selected="True" />
+            <SelectField field="BSA" selected="True" />
+            <SelectField field="PHYS_BP" selected="True" />
+            <SelectField field="PAT_PAIN_SCORE_C" selected="True" />
+            <SelectField field="FAMILY_SIZE" selected="True" />
+            <SelectField field="FAMILY_INCOME" selected="True" />
+            <SelectField field="PAT_HOMELESS_YN" selected="True" />
+            <SelectField field="TOBACCO_USE_VRFY_YN" selected="True" />
+            <SelectField field="PAT_ID2" selected="True" />
+            <SelectField field="PAT_NAME" selected="True" />
+            <SelectField field="CITY" selected="True" />
+            <SelectField field="STATE_C" selected="True" />
+            <SelectField field="COUNTY_C" selected="True" />
+            <SelectField field="County_Name" selected="True" />
+            <SelectField field="ZIP1" selected="True" rename="ZIP" size="8" />
+            <SelectField field="ZIP" selected="False" />
+            <SelectField field="BIRTH_DATE" selected="True" />
+            <SelectField field="SEX_C" selected="True" />
+            <SelectField field="ETHNIC_GROUP_C" selected="True" />
+            <SelectField field="MARITAL_STATUS_C" selected="True" />
+            <SelectField field="LANGUAGE_C" selected="True" />
+            <SelectField field="DEF_FIN_CLASS_C" selected="True" />
+            <SelectField field="CUR_PRIM_LOC_ID" selected="True" />
+            <SelectField field="PAT_MRN_ID" selected="True" />
+            <SelectField field="PROV_ID" selected="True" />
+            <SelectField field="PROV_NAME" selected="True" />
+            <SelectField field="PROV_TYPE" selected="True" />
+            <SelectField field="ACTIVE_STATUS" selected="True" />
+            <SelectField field="STAFF_RESOURCE" selected="True" />
+            <SelectField field="EXTERNAL_NAME" selected="True" />
+            <SelectField field="SERV_AREA_ID2" selected="True" />
+            <SelectField field="LOC_NAME" selected="True" />
+            <SelectField field="DX_ID" selected="True" />
+            <SelectField field="CURRENT_ICD10_LIST" selected="True" />
+            <SelectField field="DX_NAME" selected="True" />
+            <SelectField field="LINE" selected="True" />
+            <SelectField field="ZIP2" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings>
+        <Position x="582" y="-6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Zip Codes"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">True</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">title</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Zip Codes" selected="True" type="V_String" size="8" />
+            <SelectField field="City " selected="False" />
+            <SelectField field="State" selected="False" />
+            <SelectField field="County" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="942" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="PAT_ID" selected="True" />
+            <SelectField field="BP_SYSTOLIC" selected="True" />
+            <SelectField field="BP_DIASTOLIC" selected="True" />
+            <SelectField field="TEMPERATURE" selected="True" />
+            <SelectField field="PULSE" selected="True" />
+            <SelectField field="WEIGHT" selected="True" />
+            <SelectField field="BMI" selected="True" />
+            <SelectField field="BSA" selected="True" />
+            <SelectField field="RESPIRATIONS" selected="True" />
+            <SelectField field="Poverty Rate" selected="True" />
+            <SelectField field="Low Access to Supermarket" selected="True" />
+            <SelectField field="Children Eligible for Free or Reduced Price Lunch" selected="True" />
+            <SelectField field="Median Family Income" selected="True" />
+            <SelectField field="Uninsured Adults" selected="True" />
+            <SelectField field="Food Insecurity" selected="True" />
+            <SelectField field="Food Insecurity Tract" selected="True" />
+            <SelectField field="Food Environment Index" selected="True" />
+            <SelectField field="Frequent Mental Distress" selected="True" />
+            <SelectField field="Physical Inactivity" selected="True" />
+            <SelectField field="Access to Exercise" selected="True" />
+            <SelectField field="Excessive Drinking" selected="True" />
+            <SelectField field="Flu Vaccinations" selected="True" />
+            <SelectField field="Mammography" selected="True" />
+            <SelectField field="High School Graduation Rate" selected="True" />
+            <SelectField field="Percentage Unemployed" selected="True" />
+            <SelectField field="Hypertension Codes" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="954" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="PAT_ID" selected="True" />
+            <SelectField field="BP_SYSTOLIC" selected="True" />
+            <SelectField field="BP_DIASTOLIC" selected="True" />
+            <SelectField field="TEMPERATURE" selected="True" />
+            <SelectField field="PULSE" selected="True" />
+            <SelectField field="WEIGHT" selected="True" />
+            <SelectField field="RESPIRATIONS" selected="True" />
+            <SelectField field="BMI" selected="True" />
+            <SelectField field="BSA" selected="True" />
+            <SelectField field="Poverty Rate" selected="True" />
+            <SelectField field="Low Access to Supermarket" selected="True" />
+            <SelectField field="Children Eligible for Free or Reduced Price Lunch" selected="True" />
+            <SelectField field="Median Family Income" selected="True" />
+            <SelectField field="Uninsured Adults" selected="True" />
+            <SelectField field="Food Insecurity" selected="True" />
+            <SelectField field="Food Environment Index" selected="True" />
+            <SelectField field="Frequent Mental Distress" selected="True" />
+            <SelectField field="Physical Inactivity" selected="True" />
+            <SelectField field="Access to Exercise" selected="True" />
+            <SelectField field="Excessive Drinking" selected="True" />
+            <SelectField field="Flu Vaccinations" selected="True" />
+            <SelectField field="Mammography" selected="True" />
+            <SelectField field="High School Graduation Rate" selected="True" />
+            <SelectField field="Percentage Unemployed" selected="True" />
+            <SelectField field="Obesity Codes" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="954" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="PAT_ID" selected="True" />
+            <SelectField field="BP_SYSTOLIC" selected="True" />
+            <SelectField field="BP_DIASTOLIC" selected="True" />
+            <SelectField field="TEMPERATURE" selected="True" />
+            <SelectField field="PULSE" selected="True" />
+            <SelectField field="WEIGHT" selected="True" />
+            <SelectField field="BMI" selected="True" />
+            <SelectField field="BSA" selected="True" />
+            <SelectField field="RESPIRATIONS" selected="True" />
+            <SelectField field="Poverty Rate" selected="True" />
+            <SelectField field="Low Access to Supermarket" selected="True" />
+            <SelectField field="Children Eligible for Free or Reduced Price Lunch" selected="True" />
+            <SelectField field="Median Family Income" selected="True" />
+            <SelectField field="Uninsured Adults" selected="True" />
+            <SelectField field="Food Insecurity" selected="True" />
+            <SelectField field="Food Environment Index" selected="True" />
+            <SelectField field="Frequent Mental Distress" selected="True" />
+            <SelectField field="Physical Inactivity" selected="True" />
+            <SelectField field="Access to Exercise" selected="True" />
+            <SelectField field="Excessive Drinking" selected="True" />
+            <SelectField field="Flu Vaccinations" selected="True" />
+            <SelectField field="Mammography" selected="True" />
+            <SelectField field="High School Graduation Rate" selected="True" />
+            <SelectField field="Percentage Unemployed" selected="True" />
+            <SelectField field="Diabetes Codes" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1062" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Alteryx Workflows\Alteryx Outputs\Files for Supervised Algorithms\Data For KNN and SVC Models\BrunerClinic_Hypertension.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BrunerClinic_Hypertension.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1062" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Alteryx Workflows\Alteryx Outputs\Files for Supervised Algorithms\Data For KNN and SVC Models\Bruner Clinic_Obesity.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Bruner Clinic_Obesity.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1062" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">\\sclhs.net\DFS\DeptShare\HIM\HIM BI\Projects\BrunerClinic\ZA Practicum\Alteryx Workflows\Alteryx Outputs\Files for Supervised Algorithms\Data For KNN and SVC Models\BrunerClinic_Diabetes.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BrunerClinic_Diabetes.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output26" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output26" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="14" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="14" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Unique" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Join" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="23" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output26" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>BC Workflows for SLM</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
